@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- With JQuery, we can hide and show HTML elements with the hide() and show() method -->
+        <p id="hide-show">If you click on the "Hide" button, I will disappear.</p>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <button id="toggle">Toggle</button><br><br>
+        
+        <!-- With JQuery, you can fade an element in and out of visibility. -->
+        <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+        <button id="fade-in">Click to fade in box</button>
+        <button id="fade-out">Click to fade out box</button>
+        <button id="fade-to">Click to fade to box</button>
+        <button id="fade-toggle">Click to fade toggle box</button><br><br>
+
+        <!-- With JQuery, you can create a sliding effect on elements -->
+        <div id="panel" style="padding: 50px; display: none; text-align: center; background-color: #e5eecc;border: 1px solid #c3c3c3;">Hello World!</div><br><br>
+        <button id="slide-down">Slide Down</button>
+        <button id="slide-up">Slide Up</button>
+        <button id="slide-toggle">Slide Toggle</button><br><br>
+
+        <!-- With JQuery, you can create custom animation -->
+        <button id="animation">Start Animation</button>
+        <button id="stop-animation">Stop Animation</button><br><br>
+        <div id="adiv" style="background-color: #98bf21;height: 100px;width: 100px; position: relative;">Hello</div>
+        <script>
+            $(document).ready(function(){
+                $("#animation").on("click",function(){
+                    $("#adiv").animate({ height:"300px",opacity:"0.5"},"slow");
+                    $("#adiv").animate({ width:"300px",opacity:"0.8"},"slow");
+                    $("#adiv").animate({ height:"100px",opacity:"0.5"},"slow");
+                    $("#adiv").animate({ width:"100px",opacity:"1"},"slow");
+                    $("#adiv").animate({ fontSize:"3rem"},"slow");
+                });
+                $("#stop-animation").on("click",function(){
+                    $("#adiv").stop();
+                });
+
+                $("#slide-down").on("click",function(){
+                    $("#panel").slideDown(3000,function(){
+                        alert("Completed down!");
+                    });
+                });
+                $("#slide-up").on("click",function(){
+                    $("#panel").slideUp();
+                });
+                $("#slide-toggle").on("click",function(){
+                    $("#panel").slideToggle();
+                });
+                $("#hide").on("click",function(){
+                    $("#hide-show").hide();
+                });
+                $("#show").on("click",function(){
+                    $("#hide-show").show();
+                });
+                $("#toggle").on("click",function(){
+                    $("#hide-show").toggle();
+                });
+                $("#fade-in").on("click",function(){
+                    $("#div1").fadeIn(5000);
+                });
+                $("#fade-out").on("click",function(){
+                    $("#div1").fadeOut(5000);
+                });
+                $("#fade-to").on("click",function(){
+                    $("#div1").fadeTo(5000, 0.3);
+                });
+                $("#fade-toggle").on("click",function(){
+                    $("#div1").fadeToggle(5000);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .blue{color: blue;}
+            #test7{
+                width: 200px;
+                height: 200px;
+                padding: 10px;
+                margin: 10px;
+                border: 5px solid blue;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+        <input type="text" id="input" value="Mickey Mouse"/><br><br>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button>
+        <button id="btn3">Show Value</button>
+        <button id="btn4">Show Attribute</button>
+        <br><br>
+        <p id="test1">This is a paragraph.</p>
+        <p id="test2">This is another paragraph.</p>
+        <input type="text" id="test3" value="Mickey Mouse" /><br><br>
+        <button id="btn5">Set Text</button>
+        <button id="btn6">Set HTML</button>
+        <button id="btn7">Set Value</button>
+        <button id="btn8">Set Attribute</button>
+        <br><br>
+        <div id="test4">
+            <button id="btn9">Prepend</button><br>
+            <button id="btn10">Append</button>
+        </div>
+        <br><br>
+        <div id="test5" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+            <p class="filter1">This is a paragraph in the div.</p>
+            <p class="filter2">This is another paragraph in the div.</p>
+        </div>
+        <button id="btn11">Empty</button>
+        <button id="btn12">Remove</button>
+        <button id="btn13">Remove and Filter</button>
+        <br><br>
+        <div id="test6">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <p>This is a paragraph.</p>
+        </div>
+        <button id="btn14">Add Class</button>
+        <button id="btn15">Remove Class</button>
+        <button id="btn16">Toggle Class</button>
+        <button id="btn17">CSS</button>
+        <br><br>
+        <div id="test7"></div>
+        <button id="btn18">Dimension</button>
+        
+        <script>
+            $(document).ready(function(){
+                $("#btn18").on("click",function(){
+                    var txt = "";
+                    txt += "Width: " + $("#test7").width();
+                    txt += "<br> Height: " + $("#test7").height();
+                    txt += "<br> InnerWidth: " + $("#test7").innerWidth();
+                    txt += "<br> InnerHeight: " + $("#test7").innerHeight();
+                    txt += "<br> OuterWidth: " + $("#test7").outerWidth();
+                    txt += "<br> OuterHeight: " + $("#test7").outerHeight();
+                    txt += "<br> OuterHeight + Margin: " + $("#test7").outerHeight(true);
+                    txt += "<br> OuterHeight + Margin: " + $("#test7").outerHeight(true);
+                    $("#test7").html(txt).width(100).height(100);
+                });
+
+                $("#btn14").on("click",function(){
+                    $("h1,h2,p").addClass("blue");
+                });
+                $("#btn15").on("click",function(){
+                    $("h1,h2,p").removeClass("blue")
+                });
+                $("#btn16").on("click",function(){
+                    $("h1,h2,p").toggleClass("red");
+                });
+                $("#btn17").on("click",function(){
+                    alert($("#test6 p").css("color"));
+                    $("#test6 p").css({"color":"green","font-size":"200%"});
+                });
+
+                $("#btn13").on("click",function(){
+                    $("#test5 p").remove(".filter1");
+                });
+                $("#btn11").on("click",function(){
+                    $("#test5").empty();
+                });
+                $("#btn12").on("click",function(){
+                    $("#test5").remove();
+                });
+
+                $("#btn9").on("click",function(){
+                    var content1 = "<p>Content 1</p>";
+                    $("#test4").prepend(content1);
+                }).after("I'm after.");
+                $("#btn10").on("click",function(){
+                    var content2 = $("<p></p>").html("<b>Content 2</b>");
+                    $("#test4").append(content2);
+                }).before("I'm before.");
+
+                $("#btn5").on("click",function(){
+                    // $("#test1").text("Hello World!");
+                    $("#test1").text(function(index,original){
+                        return "The original value is '"+ original +"' and index is '"+ index +"'";
+                    });
+                });
+                $("#btn6").on("click",function(){
+                    // $("#test2").html("<b>Hello World!</b>");
+                    $("#test2").html(function(index,original){
+                        return "The original value is <b>"+ original +"</b> and index is <b>"+ index +"</b>";
+                    });
+                });
+                $("#btn7").on("click",function(){
+                    // $("#test3").val("Thanh Pham");
+                    $("#test3").val(function(index,original){
+                        return original + " and " + index;
+                    });
+                });
+                $("#btn8").on("click",function(){
+                    $("#test3").attr({"type":"password","style":"color:red;"});
+                    // $("#test3").attr("style",function(index,original){
+                    //     return "color:red;";
+                    // });
+                });
+
+                $("#btn1").on("click",function(){
+                    var text = $("#test").text();
+                    alert(text);
+                });
+                $("#btn2").on("click",function(){
+                    var html = $("#test").html();
+                    alert(html);
+                });
+                $("#btn3").on("click",function(){
+                    var value = $("#input").val();
+                    alert(value);
+                });
+                $("#btn4").on("click",function(){
+                    var attr = $("#input").attr("type");
+                    alert(attr);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h2>Filterable Table</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+        <input id="input" type="text" placeholder="Search..">
+        <br><br>
+
+        <table>
+            <tbody id="myTable">
+                <tr>
+                    <td><input type="checkbox" >John</td></tr><tr>
+                    <td><input type="checkbox" >Doe</td></tr><tr>
+                    <td><input type="checkbox" >john@example.com</td></tr><tr>
+                    <td><input type="checkbox" >Mary</td></tr><tr>
+                    <td><input type="checkbox" >Moe</td></tr><tr>
+                    <td><input type="checkbox" >mary@mail.com</td></tr><tr>
+                    <td><input type="checkbox" >Anja</td></tr><tr>
+                    <td><input type="checkbox" >Ravendale</td></tr><tr>
+                    <td><input type="checkbox" >a_r@test.com</td></tr><tr>
+                    <td><input type="checkbox" >Anja</td></tr><tr>
+                    <td><input type="checkbox" >Ravendale</td></tr><tr>
+                    <td><input type="checkbox" >a_r@test.com</td></tr><tr>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>This is a paragraph.</p>
+        <button id="btn1">Test JQuery</button>
+        <button id="btn2">Test JQ</button>
+        <button id="btn3">Test $</button>
+        <script>
+            var jq = $.noConflict();
+            jQuery(document).ready(function(){
+                jQuery("#btn1").on("click",function(){
+                    jQuery("p").text("jQuery is still working!");
+                });
+            });
+
+            jq(document).ready(function(){
+                jq("#btn2").on("click",function(){
+                    jq("p").text("JQ is working too!");
+                });
+            });
+
+            jQuery(document).ready(function($){
+                $("#btn3").on("click",function(){
+                    $("p").text("$ is working too!");
+                });
+                $("#input").on("keyup",function(){
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      /*
+        $("#selector_4 p:first").css({"background-color":"green"});
+        $("#selector_4 p:last").css({"background-color":"yellow"});
+        $("#selector_4 tr:even").css({"background-color":"gray"});
+        $("#selector_4 tr:odd").css({"background-color":"lightgray"});
+ 
+        $("h2, div, span").css({"background-color":"green"});
+        $(".intro, .demo, .end").css({"background-color":"red"});
+        $("#selector_1 *").css({"background-color":"gray"});
+        $("#selector_2 #intro").css({"background-color":"yellow"});
+
+        $("#selector_5 p:first-child").css({"background-color":"green"});
+        $("p:last-child").css({"background-color":"green"});
+
+        $("#selector_5 p:first-of-type").css({"background-color":"green"});
+        $("p:last-of-type").css({"background-color":"green"});
+
+        $("p:nth-child(3)").css({ "background-color": "green" });
+        $("p:nth-last-child(3)").css({"background-color":"green"});
+        $("p:nth-of-type(3)").css({"background-color":"green"});
+        $("p:nth-last-of-type(3)").css({"background-color":"green"});
+        $("p:only-child").css({"background-color":"green"});
+        $("p:only-of-type").css({"background-color":"green"});
+        $("div > span").css({ "background-color": "green" });
+        $("div span").css({ "background-color": "green" });
+        $("div + p").css({"background-color":"green"});
+        $("div ~ p").css({"background-color":"green"});
+        $("p:eq(1)").css({ "background-color": "green" });
+        
+        $("tr:gt(3)").css({"background-color":"green"});
+        $("tr:lt(3)").css({"background-color":"yellow"});
+        $("tr:eq(3)").css({"background-color":"red"});
+        $("tr:not(.intro)").css({"background-color":"blue"});
+        $("tr").not(".intro").css({"background-color":"yellow"});
+        $(":header").css({"background-color":"yellow"});
+        
+        function aniDiv(){
+          $("div:eq(0)").animate({width:"50%"},"slow");
+          $("div:eq(0)").animate({width:"100%"},"slow", aniDiv);
+        }
+        aniDiv();
+        $(".btn1").on("click",function(){
+          $(":animated").css({"background-color":"red"});
+        });
+        
+      $("input").focus();
+      $(":focus").css({ "background-color": "yellow" });
+      $("p:contains(is)").css({ "background-color": "yellow" });
+      $("p:has(span)").css({ "border": "solid red" });
+      $("td:parent").css({"background-color":"gray"});
+      $("td:empty").css({ "background-color": "yellow" });
+      
+      $("p:visible").css({ "background-color": "green" });
+      $("p:hidden").show(1000).css({ "background-color": "yellow" });
+      $(":root").css({ "background-color": "gray" });
+      $("p:lang(it)").css({"background-color":"red"});
+      $("[id]").css({"background-color":"yellow"});
+      $("[id=choose]").css({ "background-color": "green" });
+      $("p[class!='intro']").css({"background-color":"green"});
+      $("a[href$='.org']").css({"background-color":"yellow"});
+      $("p[title|='Tomorrow']").css({"background-color":"green"});
+      $("input[name^='nation']").css({"background-color":"yellow"});
+      $("input[name~='nation']").css({"background-color":"yellow"});
+      $("input[name*='nation']").css({"background-color":"yellow"});
+      $(":input").css({"background-color":"gray"});
+      $(":text").css({"background-color":"lightblue"});
+      $(":password").css({"background-color":"lightblue"});
+      $(":radio").wrap("<span style='background-color:red'></span>");
+      $(":checkbox").wrap("<span style='background-color:red'></span>");
+      $("input[type='submit']").css({"background-color":"green"});
+      $(":reset").css({"background-color":"lightblue"});
+      $(":file").css({"background-color":"lightblue"});
+      $(":enabled").css({ "background-color": "yellow" });
+      $(":disabled").css({ "background-color": "lightblue" });
+      $(":checked").wrap("<span style='background-color:green;'></span>");
+   */
+    });
+  </script>
+</head>
+
+<body>
+  <!--
+  <form action="">
+    Name: <input type="text" name="user"><br>
+    ID:<input type="text" name="id" disabled="disabled"><br>
+    Car:
+    <select>
+      <option>Volvo</option>
+      <option selected="selected">Saab</option>
+      <option>Mercedes</option>
+      <option>Audi</option>
+    </select><br>
+    I have a bike: <input type="checkbox" name="vehicle" value="Bike"><br>
+    I have a car: <input type="checkbox" name="vehicle" value="Car" checked="checked"><br>
+    I have an airplane: <input type="checkbox" name="vehicle" value="Airplane"><br>
+    Age:
+    <select disabled="disabled">
+      <option>20-30</option>
+      <option>30-50</option>
+      <option>50+</option>
+    </select>
+    <input type="submit">
+  </form>
+  <form action="">
+    File: <input type="file" name="myfile"><br>
+    Compatible: <input type="image" src="https://www.w3schools.com/jquery/compatible_ie.gif" width="31" height="30"><br>
+    Name: <input type="text" name="user"><br>
+    Password: <input type="password" name="password"><br>
+    <button type="button">Useless Button</button>
+    <input type="button" value="Another useless button"><br>
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit"><br>
+  </form>
+  <form action="">
+    Name: <input type="text" name="user"><br>
+    I have a bike: <input type="checkbox" name="vehicle" value="Bike"><br>
+    I have a car: <input type="checkbox" name="vehicle" value="Car"><br>
+    I have an airplane: <input type="checkbox" name="vehicle" value="Airplane"><br>
+    <input type="submit">
+  </form>
+  <form action="">
+    Name: <input type="text" name="user"><br>
+    Male:<input type="radio" name="sex" value="m"><br>
+    Female<input type="radio" name="sex" value="f"><br>
+    <input type="submit">
+  </form>
+  <form action="">
+    Name: <input type="text" name="user"><br>
+    Password: <input type="password" name="password"><br>
+    <button type="button">Useless Button</button>
+    <input type="button" value="Another useless button"><br>
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit"><br>
+  </form>
+  <input name="nationality" type="text" value="Chinese">
+  <input name="nation" type="text" value="English">
+  <input name="country" type="text" value="Germany">
+  <input name="anothernation" type="text" value="Norwegian">
+  <p title="Tomorrow">This is a paragraph.</p>
+  <p title="tomorrow">This is a paragraph.</p>
+  <p title="Tom">This is a paragraph.</p>
+  <p title="See You Tomorrow">This is a paragraph.</p>
+  <p title="Tomorrow-the day after today">This is a paragraph.</p>
+  <a href="https://www.w3schools.com">w3schools.com</a><br>
+  <a href="http://www.google.com">Google.com</a><br>
+  <a href="http://www.wikipedia.org">wikipedia.org</a>
+  <h1>Welcome to My Homepage</h1>
+
+  <p class="intro">My name is Donald.</p>
+  <p>I live in Duckburg.</p>
+  <p>My best friend is Mickey.</p>
+
+  Who is your favourite:
+  <ul id="choose">
+    <li>Goofy</li>
+    <li>Mickey</li>
+    <li>Pluto</li>
+  </ul>
+  <p>I live in Italy.</p>
+  <p lang="it">Ciao bella!</p>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <p style="display:none;">This is a hidden paragraph that is slowly shown.</p>
+  
+  <table border="1">
+    <tr>
+      <th>Company</th>
+      <th></th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td></td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td></td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+  </table>
+  
+  <p><span>This is a span element inside a p element.</span></p>
+  <p>This is a p element with no span element.</p>
+  
+  <h1>Welcome to My Homepage</h1>
+
+  <p class="intro">My name is Donald.</p>
+  <p>I live in Duckburg.</p>
+  <p>My best friend is Mickey.</p>
+
+  Who is your favourite:
+  <ul id="choose">
+    <li>Goofy</li>
+    <li>Mickey</li>
+    <li>Pluto</li>
+  </ul>
+  
+  <input type="text" />
+ 
+  <button class="btn1">Change color of the animated element</button>
+
+  <div style="background:blue;">Div 1</div>
+  <div style="background:green;">Div 2</div>
+  <div style="background:yellow;">Div 3</div>
+  
+  <h1>Welcome to My Homepage</h1>
+  <h2>My Fantastic Homepage</h2>
+  <h3>It's amazing!</h3>
+
+  <p class="intro">My name is Donald.</p>
+  <p>I live in Duckburg.</p>
+  <p>My best friend is Mickey.</p>
+  <p>Who is your favourite:</p>
+
+  <ul id="choose">
+    <li>Goofy</li>
+    <li>Mickey</li>
+    <li>Pluto</li>
+  </ul>
+  
+  <h1>Welcome to My Web Page</h1>
+
+  <table border="1">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr class="intro">
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+  </table>
+  
+  <h1>Welcome to My Homepage</h1>
+
+  <p class="intro">My name is Donald.</p>
+  <p>I live in Duckburg.</p>
+  <p>My best friend is Mickey.</p>
+
+  <p>Who is your favourite:</p>
+  <ul id="choose">
+    <li>Goofy</li>
+    <li>Mickey</li>
+    <li>Pluto</li>
+  </ul>
+  
+  <h2>What will $("div ~ p") select?</h2>
+
+  <p>This is a p element (will not be selected).</p>
+  <div style="border:1px solid black;padding:10px;">This is a div element.</div>
+  <p>This is a p element.</p>
+  <p>This is another p element.</p>
+
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a p element inside a div element (will not be selected).</p>
+  </div>
+
+  <h2>This is a heading</h2>
+  <p>This is a p element.</p>
+  
+  <h2>What will $("div + p") select?</h2>
+
+  <div style="border:1px solid black;padding:10px;">This is a div element.</div>
+  <p>This p element is next to a div element.</p>
+  <p>This is another p element.</p>
+
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a p element inside a div element.</p>
+  </div>
+
+  <h2>This is a heading next to a div element.</h2>
+  <p>This is a p element (This p element will not be selected, because the h2 element above is the "next" element of the
+    div element).</p>
+  
+  <h2>What will $("div span") select?</h2>
+
+  <h4>This div element has two descendants, p and span:</h4>
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a paragraph.</p>
+    <span>This is a text inside a span.</span>
+  </div>
+
+  <h4>This div element has also two descendants, p and span:</h4>
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a paragraph. <span>This is a span element, inside the paragraph.</span></p>
+  </div>
+  
+  <h2>What will $("div > span") select?</h2>
+
+  <h4>This div element has two direct child elements, p and span:</h4>
+
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a paragraph.</p>
+    <span>This is a text inside a span.</span>
+  </div>
+
+  <h4>This div element has one direct child element, p:</h4>
+
+  <div style="border:1px solid black;padding:10px;">
+    <p>This is a paragraph. <span>This is a span element, inside the paragraph.</span></p>
+  </div>
+
+  
+  <div style="border:1px solid;">
+    <p>The first paragraph.</p>
+    <p>The last paragraph.</p>
+  </div><br>
+
+  <div style="border:1px solid;">
+    <p>The only paragraph.</p>
+  </div><br>
+
+  <div style="border:1px solid;">
+    <span>This is a span element.</span>
+    <p>The only paragraph.</p>
+  </div><br>
+
+  
+  <div style="border:1px solid;">
+    <p>The first child.</p>
+    <p>The last child.</p>
+  </div><br>
+  
+  <div style="border:1px solid;">
+    <p>The only child.</p>
+  </div><br>
+  
+  <div style="border:1px solid;">
+    <span>The first child.</span>
+    <p>The last child.</p>
+  </div><br>
+  
+  <h1>This is a heading in body</h1>
+  <p>The first paragraph in body (and the 3rd paragraph in body, counting from the last child).</p>
+  <p>The second paragraph in body.</p>
+
+  <div style="border:1px solid;">
+    <span>This is a span element in div</span>
+    <p>The first paragraph in div (and the 3rd paragraph in div, counting from the last child).</p>
+    <p>The second paragraph in div.</p>
+    <p>The last paragraph in div.</p>
+  </div><br>
+
+  <div style="border:1px solid;">
+    <p>The first paragraph in another div (and the 3rd paragraph, counting from the last child).</p>
+    <p>The second paragraph in another div.</p>
+    <p>The last paragraph in another div.</p>
+  </div>
+
+  <p>The last paragraph in body.</p>
+  
+  <h1>This is a heading in body</h1>
+  <p>The first paragraph in body.</p>
+  <p>The second paragraph in body.</p>
+
+  <div style="border:1px solid;">
+    <span>This is a span element in div</span>
+    <p>The first paragraph in div.</p>
+    <p>The second paragraph in another div.</p>
+    <p>The last (third) paragraph in div.</p>
+  </div><br>
+
+  <div style="border:1px solid;">
+    <p>The first paragraph in another div.</p>
+    <p>The second paragraph in another div.</p>
+    <p>The last (third) paragraph in another div.</p>
+  </div>
+
+  <p>The last (third) paragraph in body.</p>
+   
+        <h1>This is a heading in body</h1>
+
+        <p>The first paragraph in body.</p>
+        <p>The second paragraph in body.</p>
+
+        <div style="border:1px solid;">
+          <span>This is a span element in div</span>
+          <p>The first paragraph in div (and the 3rd child in div, counting from the last child).</p>
+          <p>The second paragraph in div.</p>
+          <p>The last paragraph in div.</p>
+        </div><br>
+
+        <div style="border:1px solid;">
+          <p>The first paragraph in another div (and the 3rd child in this div, counting from the last child).</p>
+          <p>The second paragraph in another div.</p>
+          <p>The last paragraph in another div.</p>
+        </div>
+
+        <p>The last paragraph in body.</p>
+  
+        <h1>This is a heading in body</h1>
+
+        <p>The first paragraph in body.</p>
+        <p>The second paragraph in body (and the 3rd child element in body).</p>
+
+        <div style="border:1px solid;">
+          <span>This is a span element in div</span>
+          <p>The first paragraph in div.</p>
+          <p>The second paragraph in another div (and the 3rd child element in this div).</p>
+          <p>The last paragraph in div.</p>
+        </div><br>
+
+        <div style="border:1px solid;">
+          <p>The first paragraph in another div.</p>
+          <p>The second paragraph in another div.</p>
+          <p>The last paragraph in another div (and the 3rd child element in this div).</p>
+        </div>
+
+        <p>The last paragraph in body.</p>
+      
+
+        <p>The first paragraph in body.</p>
+
+        <div style="border:1px solid;">
+          <p>The first paragraph in div.</p>
+          <p>The last paragraph in div.</p>
+        </div><br>
+
+        <div style="border:1px solid;">
+          <p>The first paragraph in another div.</p>
+          <p>The last paragraph in another div.</p>
+          <span>This is a span element.</span>
+        </div>
+
+        <p>The last paragraph in body.</p>
+
+
+        <p>The first paragraph in body.</p>
+
+        <div style="border:1px solid;">
+          <p>The first paragraph in div.</p>
+          <p>The last paragraph in div.</p>
+        </div><br>
+        
+        <div style="border:1px solid;">
+          <p>The first paragraph in another div.</p>
+          <p>The last paragraph in another div.</p>
+          <span>This is a span element.</span>
+        </div>
+        
+        <p>The last paragraph in body.</p>
+        
+
+        <div id="selector_1">
+            <h1>Welcome to My Homepage</h1>
+
+            <p class="intro">My name is Donald.</p>
+            <p>I live in Duckburg.</p>
+            <p>My best friend is Mickey.</p>
+    
+            <p>Who is your favourite:</p>
+            <ul id="choose">
+            <li>Goofy</li>
+            <li>Mickey</li>
+            <li>Pluto</li>
+            </ul>
+        </div>
+
+       
+        <div id="selector_2">
+            <h1>Welcome to My Homepage</h1>
+
+            <p id="intro">My name is Donald.</p>
+            <p>I live in Duckburg.</p>
+        </div>
+
+        
+        <div id="selector_3">
+            <h2>Nice to meet you</h2>
+            <div>Very nice indeed.</div>
+            <p>I'm fine, <span>thanks.</span></p>
+
+            <p class="intro">This paragraph has class "intro".</p>
+            <p>This is a paragraph.</p>
+            <p class="demo">This paragraph has class "demo".</p>
+            <p>This is another paragraph.</p>
+            <p class="end">This paragraph has class "end".</p>
+        </div>
+
+
+        <div id="selector_4">
+            <span>This is a span element.</span>
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the last paragraph.</p>
+            <table border="1">
+                <tr>
+                  <th>Company</th>
+                  <th>Country</th>
+                </tr>
+                <tr>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>Berglunds snabbköp</td>
+                  <td>Sweden</td>
+                </tr>
+                <tr>
+                  <td>Centro comercial Moctezuma</td>
+                  <td>Mexico</td>
+                </tr>
+                <tr>
+                  <td>Ernst Handel</td>
+                  <td>Austria</td>
+                </tr>
+                <tr>
+                  <td>Island Trading</td>
+                  <td>UK</td>
+                </tr>
+              </table>
+        </div>
+
+
+        <div id="selector_5">
+            <p>The first paragraph in body.</p>
+
+            <div style="border:1px solid;">
+              <p>The first paragraph in div.</p>
+              <p>The last paragraph in div.</p>
+            </div><br>
+            
+            <div style="border:1px solid;">
+              <span>This is a span element.</span>
+              <p>The first paragraph in another div.</p>
+              <p>The last paragraph in another div.</p>
+            </div>
+            
+            <p>The last paragraph in body.</p>
+        </div>
+      -->
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+            padding: 30px;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        h3 {
+            background-color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*
+            $("input").blur(function(){
+                alert("This input field has lost it focus.");
+            });
+            $("input").change(function(){
+                alert("The text has been changed.");
+            });
+            $("input").click(function(){
+                $("p").click();
+            });
+            $("input").dblclick(function(){
+                alert("The input was double-clicked.");
+            });
+            $("input, p").click(function(event){
+                console.log(event.currentTarget);
+            });
+            $("p").each(function(i){
+                $(this).on("click",{x:i},function(event){
+                    alert("The "+ $(this).index() +". paragraph has data: "+ event.data.x);
+                });
+            });
+            $("div").on("click","button",function(event){
+                $(event.delegateTarget).css({"background-color":"lightblue"});
+            });
+            $("a").click(function(event){
+                event.preventDefault();
+                alert("Was preventDefault() called: " + event.isDefaultPrevented());
+            });
+            $("div").click(function(event){
+                event.stopImmediatePropagation();
+                event.stopPropagation();
+                alert("Was event stopImmediatePropagation() called: " + event.isPropagationStopped());
+            });
+            $("p").on("custom.someNamespace",function(event){
+                alert(event.namespace);
+            });
+            $("p").click(function(){
+                $(this).trigger("custom.someNamespace");
+            });
+            $("button").click(function(){
+                $("p").off("custom.someNamespace");
+            });
+            $(document).mousemove(function(event){ 
+                console.log(event);
+                $("span").text("X: " + event.pageX + ", Y: " + event.pageY); 
+            });
+            $("a").click(function(event){
+                event.preventDefault();
+            });
+            $("div, p").mouseenter(function(event){
+                $("#msg").html("Related target is: " + event.relatedTarget.nodeName);
+            });
+            $("p").on("click dblclick mouseover mouseout", function(event){
+                $("div").html("Event: " + event.type);
+            });
+            $("input").keydown(function(event){
+                $("div").html("Key: " + event.which);
+            });
+            $("input").focus(function () {
+                $("p").css({ "display": "inline" }).fadeOut(2000);
+            });
+            $("div").focusin(function(){
+                $(this).css({"background-color":"yellow"});
+            });
+            $("div").focusout(function(){
+                $(this).css({"background-color":"white"});
+            });
+            $("p").hover(function(){
+                $(this).css({"background-color":"yellow"});
+            },function(){
+                $(this).css({"background-color":"pink"});
+            });
+            $("input").keydown(function(){
+                $("input").css({"background-color":"yellow"});
+            });
+            $("input").keyup(function(){
+                $("input").css({"background-color":"pink"});
+            });
+            $("div").mouseup(function(){
+                $(this).after("<p style='color:green;'>Mouse button released.</p>");
+            });
+            $("div").mousedown(function(){
+                $(this).after("<p style='color:purple;'>Mouse button pressed down.</p>");
+            });
+            $("p").mouseenter(function(){
+                $("p").css({"background-color":"yellow"});
+            });
+            $("p").mouseleave(function(){
+                $("p").css({"background-color":"lightgray"});
+            });
+            $(document).mousemove(function(event){
+                $("span").text(event.pageX + ' , ' +event.pageY);
+            });
+            $("div.over").mouseover(function(){
+                $(".over span").text(x += 1);
+            });
+            $("div.enter").mouseenter(function(){
+                $(".enter span").text(y += 1);
+            });
+            $("div.move").mousemove(function(){
+                $(".move span").text(z += 1);
+            });
+            var x = y = z = 0;
+            $("div.over").mouseout(function(){
+                $(".over span").text(x += 1);
+            });
+            $("div.enter").mouseleave(function(){
+                $(".enter span").text(y += 1);
+            });
+            $("p").on("click",function(){
+                $(this).css({"background-color":"pink"});
+            });
+            $("button").click(function(){
+                $("p").off("click");
+            });
+            $("p").one("click",function(){
+                $(this).animate({fontSize: "+=6px"});
+            });
+            var objPerson = {
+                name: "Thanh Pham",
+                age: 30,
+                test: function () {
+                    $("p").after("Name: " + this.name + "<br> Age: " + this.age);
+                }
+            };
+            $("button").click($.proxy(objPerson, "test"));
+            var x = 0;
+            $("div").scroll(function(){
+                $("span").text(x+=1);
+            });
+            */
+            $("input").select(function(){
+                alert("Text marked!");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" value="Hello World">
+    <!--
+    <div style="border:1px solid black;width:200px;height:100px;overflow:scroll;">In my younger and more vulnerable
+        years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't
+        had the advantages that you've had.'
+    </div>
+
+    <p>Scrolled <span>0</span> times.</p>
+    <button>Run test function</button>
+
+    <p></p>
+    <button>Remove the click event handler</button>
+    <div class="over">
+        <h3>Mouseover event triggered: <span></span></h3>
+      </div>
+      
+      <div class="enter">
+        <h3>Mouseenter event triggered: <span></span></h3>
+      </div>
+      
+      <div class="move">
+        <h3>Mousemove event triggered: <span></span></h3>
+      </div>
+    <p>Mouse is at coordinates: <span></span>.</p>
+    <p>Move the mouse pointer over this paragraph.</p>
+    <div>Press down and release the mouse button over this div element.</div>
+    Enter your name: <input type="text">
+
+    <p>Enter your name in the input field above. It will change background color on keydown and keyup.</p>
+
+    <p>Hover the mouse pointer over this paragraph.</p>
+    <div style="border: 1px solid black;padding:10px;">
+        First name: <input type="text"><br>
+        Last name: <input type="text">
+    </div>
+    Enter your name: <input type="text">
+
+    <p>When you type in the field above, the div element below will display the key number.</p>
+    <p>This paragraph has a click, double-click, mouseover and mouseout event defined.<br>If you trigger one of the
+        events, the div element below will display the event type.</p>
+    <div></div>
+
+    <div style="height:200px;border:solid">This is a div element
+        <p style="background-color:pink">This is a paragraph</p>
+    </div><br>
+
+    <div id="msg" />
+    <a href="https://w3schools.com/">Go to W3Schools.com</a>
+
+    <p>The preventDefault() method will prevent the link above from following the URL.</p>
+    <p>The mouse pointer position is at: <span></span></p>
+    <p>Click on this paragraph.</p>
+
+    <button>Remove namespace</button>
+    <div style="height:100px;width:300px;padding:10px;border:1px solid blue;background-color:lightblue;">Click on this div element.</div>
+    <a href="https://w3schools.com/">Go to W3Schools.com</a>
+
+    <p>The preventDefault() method will prevent the link above from following the URL.</p>
+    <p>Click the link and check if the default action is prevented.</p>
+    <div style="background-color:yellow">
+        <p>Click the button to change the background color of this div.</p>
+        <button>Click me!</button>
+      </div>
+      
+      <div style="background-color:yellow">
+        <p>Click the button to change the background color of this div.</p>
+        <button>Click me!</button>
+      </div>
+      
+    <div style="color:red">Click on each p element to return the data passed with the on() method.</div>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is another paragraph.</p>
+    Enter your name: <input type="text">
+    <p onclick="alert('Hello world!');">Write something in the input field, and then click outside the field to lose focus (blur).</p>
+    -->
+</body>
+
+</html>

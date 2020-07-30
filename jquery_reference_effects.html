@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+            $("#btn1").click(function(){
+                $("#box").animate({"height":"300px"});
+            });
+            $("#btn2").click(function(){
+                $("#box").animate({"height":"100px"});
+            });
+            $("#start").click(function(){
+                $("div").animate({"height":"300px"}, 1500);
+                $("div").animate({"width":"300px"}, 1500);
+                $("div").animate({"height":"100px"}, 1500);
+                $("div").animate({"width":"100px"}, 1500);
+            });
+            $("#stop").click(function(){
+                $("div").clearQueue();
+            });
+            $("button").click(function () {
+                $("#div1").delay(1000).fadeIn();
+                $("#div2").delay(2000).fadeIn();
+                $("#div3").delay(4000).fadeIn();
+                $("#div4").delay(6000).fadeIn();
+                $("#div5").delay(8000).fadeIn();
+            });
+            $("#start").click(function(){
+                var div = $("div");
+                div.animate({height:300},"slow");
+                div.animate({width:300},"slow");
+                div.queue(function(){
+                    div.css({"background-color":"red"});
+                    div.dequeue();
+                });
+                div.animate({height:100},"slow");
+                div.animate({width:100},"slow");
+            });
+            $(".btn1").click(function(){
+                $("p").fadeOut();
+            });
+            $(".btn2").click(function(){
+                $("p").fadeIn();
+            });
+            $(".btn3").click(function(){
+                $("p").fadeToggle();
+            });
+            $(".btn4").click(function(){
+                $("p").fadeTo(1000,0.5);
+            });
+            $("#start").click(function(){
+                $("div").animate({height:300}, 2000);
+                $("div").animate({width:300}, 2000);
+            });
+            $("#complete").click(function(){
+                $("div").finish();
+            });
+            $(".btn1").click(function () {
+                $("p").hide();
+            });
+            $(".btn2").click(function () {
+                $("p").show();
+            });
+            $(".btn3").click(function () {
+                $("p").toggle();
+            });
+            */
+            $(".btn1").click(function(){
+                $("p").slideUp();
+            });
+            $(".btn2").click(function(){
+                $("p").slideDown();
+            });
+            $(".btn3").click(function(){
+                $("p").slideToggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>This is a paragraph.</p>
+
+    <button class="btn1">Slide up</button>
+    <button class="btn2">Slide down</button>
+    <button class="btn3">Slide toggle</button>
+
+    <!--
+    <p>This is a paragraph.</p>
+
+    <button class="btn1">Hide</button>
+    <button class="btn2">Show</button>
+    <button class="btn3">Toggle</button>
+    <p>
+        <button id="start">Start Animation</button>
+        <button id="complete">Finish Current Animation</button>
+    </p>
+
+    <div style="background:#98bf21;height:100px;width:100px"></div>
+    <p>This is a paragraph.</p>
+
+    <button class="btn1">Fade out</button>
+    <button class="btn2">Fade in</button>
+    <button class="btn3">Fade toggle</button>
+    <button class="btn4">Fade to</button>
+    <p><button id="start">Start Animation</button></p>
+
+    <div style="background:blue;height:100px;width:100px;">
+    <button>Click to fade in boxes with a delay</button>
+    <br><br>
+
+    <div id="div1" style="width:90px;height:90px;display:none;background-color:black;"></div><br>
+    <div id="div2" style="width:90px;height:90px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:90px;height:90px;display:none;background-color:blue;"></div><br>
+    <div id="div4" style="width:90px;height:90px;display:none;background-color:red;"></div><br>
+    <div id="div5" style="width:90px;height:90px;display:none;background-color:purple;"></div><br>
+    <button id="start">Start Animation</button>
+    <button id="stop">Stop Animation</button>
+    <br><br>
+
+    <div style="background:red;height:100px;width:100px;"></div>
+    <button id="btn1">Animate height</button>
+    <button id="btn2">Reset height</button>
+
+    <div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+    -->
+</body>
+
+</html>

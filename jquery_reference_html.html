@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .intro {
+            font-size: 150%;
+            color: rebeccapurple;
+        }
+
+        div {
+            background-color: yellow;
+        }
+
+        article {
+            background-color: pink;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            /**
+            $("button").click(function(){
+                $("p:first").addClass("intro");
+            });
+            $("button").click(function(){
+                $("p").after("<p>Hello world!</p>");
+            });
+            $("#btn1").click(function () {
+                $("p").append("<b>Appended text</b>.");
+            });
+            $("#btn2").click(function () {
+                $("ol").append("<li>Appended item</li>");
+            });
+            $("button").click(function(){
+                $("<span> Hello world!</span>").appendTo("p");
+            });
+            $("button").click(function(){
+                $("img").attr("width","500");
+            });
+            $("button").click(function () {
+                $("p").before("<p>Hello world!</p>");
+            });
+            $("button").click(function(){
+                $("p").clone().appendTo("body");
+            });
+            $("button").click(function(){
+                $("p").css({color:"red"});
+            });
+            $("button").click(function(){
+                $("p").detach();
+            });
+            $("button").click(function(){
+                $("div").empty();
+            });
+            $("button").click(function(){
+                alert($("p").hasClass("intro"));
+            });
+            $("button").click(function(){
+                alert("Height of div: " + $("div").height());
+            });
+            $("button").click(function(){
+                $("p").html("Hello <b>world!</b>");
+            });
+            $("button").click(function(){
+                alert("Inner height of div: " + $("div").innerHeight());
+            });
+            $("button").click(function(){
+                alert("Inner height of div: " + $("div").innerWidth());
+            });
+            $("button").click(function(){
+                $("<span>Hello world!</span>").insertAfter("p");
+            });
+            $("button").click(function(){
+                $("<span>Hello world!</span>").insertBefore("p");
+            });
+            $("button").click(function () {
+                var x = $("p").offset();
+                alert("Top: " + x.top + " Left: " + x.left);
+            });
+            $("button").click(function(){
+                $("p").offsetParent().css({"background-color":"lightblue"});
+            });
+            $("button").click(function(){
+                alert("Outer height of div: " + $("div").outerWidth());
+            });
+            $("button").click(function () {
+                var x = $("p").position();
+                alert("Top position: " + x.top + " Left position: " + x.left);
+            });
+            $("#btn1").click(function(){
+                $("p").prepend("<b>Prepended text</b>.");
+                $("<span>Hello world!</span>").prependTo("p");
+            });
+            $("#btn2").click(function(){
+                $("ol").prepend("<li>Prepened item</li>");
+            });
+            $("button").click(function(){
+                var $x = $("div");
+                $x.prop("color","FF0000");
+                $x.append("The color property has the following value: " + $x.prop("color"));
+                $x.removeProp("color");
+                $x.append("<br>Now the color property has the following value: " + $x.prop("color"));
+            });
+            $("button").click(function () {
+                $("p").remove();
+            });
+            $("button").click(function () {
+                $("p").removeAttr("style");
+            });
+            $("button").click(function(){
+                $("p").removeClass("intro");
+            });
+            $("button").click(function () {
+                $("<h2>Hello world!</h2>").replaceAll("p");
+            });
+            $("button").click(function(){
+                $("p:first").replaceWith("Hello world!");
+            });
+            $("button").click(function(){
+                alert($("div").scrollTop() + " px");
+            });
+        */
+            $("#btn1").click(function () {
+                $("p").unwrap();
+            });
+            $("#btn2").click(function(){
+                $("p").wrapAll("<div></div>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>This is a paragraph inside a div element.</p>
+    </div>
+
+    <article>
+        <p>This is a paragraph inside an article element.</p>
+    </article>
+
+    <button id="btn1">Remove the parent element of each p element</button>
+    <button id="btn2">Add the parent element of each p element</button>
+    <!--
+    <div style="border:1px solid black;width:100px;height:150px;overflow:auto">
+        The longest word in the english dictionary is: This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text..
+    </div><br>
+
+    <button>Return the horizontal position of the scrollbar</button>
+    <p>Move the scrollbar to the right and click the button again.</p>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Replace the first p element with new text</button>
+    <button>Replace all p elements with h2 elements</button><br>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is another paragraph.</p>
+    <h1>This is a heading</h1>
+
+    <p class="intro">This is a paragraph.</p>
+    <p class="intro">This is another paragraph.</p>
+
+    <button>Remove the "intro" class from all p elements</button>
+    <p style="font-size:120%;color:red">This is a paragraph.</p>
+    <p style="font-weight:bold;color:blue">This is another paragraph.</p>
+
+    <button>Remove the style attribute from all p elements</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Remove all p elements</button>
+    <button>Add and remove a property</button><br><br>
+
+    <div></div>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+
+    <button id="btn1">Prepend text</button>
+    <button id="btn2">Prepend list item</button>
+    <p>This is a paragraph.</p>
+    <button>Return the top and left position of the p element</button>
+    <div style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;">
+    </div><br>
+
+    <button>Display the outer height of div</button>
+    <p>outerHeight() - returns the outer height of an element (includes padding and border).</p>
+    <button>Set background-color</button>
+
+    <div style="border:1px solid black;width:70%;position:absolute;left:10px;top:50px">
+        <div style="border:1px solid black;margin:50px;background-color:yellow">
+
+            <p>Click button to set the background color of the first positioned parent element of this paragraph.</p>
+
+        </div>
+    </div>
+    <p>This is a paragraph.</p>
+
+    <button>Return the offset coordinates of the p element</button>
+
+    <button>Insert span element before each p element</button>
+
+    <br><br>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button>Insert span element after each p element</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <div style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;">
+    </div><br>
+
+    <button>Display the inner height of div</button>
+    <p>innerHeight() - returns the inner height of an element (includes padding).</p>
+    <button>Change content of all p elements</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <div style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;">
+    </div><br>
+
+    <button>Display the height of div</button>
+    <h1>This is a heading</h1>
+
+    <p class="intro">This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Does any p element have an "intro" class?</button>
+    <div style="height:100px;background-color:yellow">
+        This is some text
+        <p>This is a paragraph inside the div.</p>
+    </div>
+
+    <p>This is a paragraph outside the div.</p>
+
+    <button>Remove content of the div element</button>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button>Remove all p elements</button>
+    <button>Set the color property of all p elements</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Clone all p elements, and append them to the body element</button>
+    <button>Insert content before each p element</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <img src="https://www.w3schools.com/jquery/img_pulpitrock.jpg" alt="Pulpit Rock" width="284" height="213"><br>
+
+    <button>Set the width attribute of the image</button>
+    <button>Insert span element at the end of each p element</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list item</button>
+    <button>Insert content after each p element</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <h1>This is a heading</h1>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Add a class name to the first p element</button>
+-->
+</body>
+
+</html>

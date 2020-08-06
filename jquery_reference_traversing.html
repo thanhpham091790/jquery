@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* .descendants * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        } */
+        .siblings * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+            $("h1").add("p").css({"background-color":"green"});
+            $("ul").children().css({"border-color":"red"});
+            $("span").closest("ul").css({"border-color":"red"});
+            $("button").click(function(){
+                $("div").contents().filter("em").wrap("<b/>");
+            });
+            $("button").click(function(){
+                $("li").each(function(){
+                    alert($(this).text());
+                });
+            });
+            $("p").eq(1).css({"background-color":"yellow"});
+            $("p").filter(".intro").css({"background-color":"red"});
+            $("div p").first().css({"background-color":"red"});
+            $("p").has("span").css({"background-color":"yellow"});
+            $("p").click(function(){
+                if($("p").parent().is("div")){
+                    alert("Parent of p is div");
+                }
+            });
+            $("li.start").next().css({"color":"red","border":"2px solid red"});
+            $("li.start").nextAll().css({"color":"red","border":"2px solid red"});
+            $("li.start").nextUntil("li.stop").css({"color":"red","border":"2px solid red"});
+            $("li").not(".start, .stop").css({"background-color":"yellow"});
+            $("button").click(function(){
+                $("p").offsetParent().css({"background-color":"red"});
+            });
+            $("button").click(function () {
+                $("p").parentsUntil("body").css({ "background-color": "green" });
+            });
+            */
+            $("p").slice(2).css({"background-color":"yellow"});
+        });
+    </script>
+</head>
+
+<body>
+    <button>Set background-color</button>
+
+    <div style="border:1px solid black;width:70%;position:absolute;left:10px;top:50px">
+        <div style="border:1px solid black;margin:50px;">
+            <p>My name is Donald (index 0).</p>
+            <p>Donald Duck (index 1).</p>
+            <p>I live in Duckburg (index 2).</p>
+            <p>My best friend is Mickey (index 3).</p>
+            <p>Click button to set the background color of the first positioned parent element of this paragraph.</p>
+        </div>
+    </div>
+    <!--
+    <div style="width:500px;" class="siblings">
+        <ul>ul (parent)
+            <li>li (sibling)</li>
+            <li>li (sibling)</li>
+            <li class="start">li (sibling with class name "start")</li>
+            <li>li (the next sibling of li with class name "start")</li>
+            <li>li (sibling)</li>
+            <li class="stop">li (sibling)</li>
+            <li>li (sibling)</li>
+        </ul>
+    </div>
+    <div>
+        <p>Click me to find out if I my parent is a div element.</p>
+    </div>
+    <h1>Welcome to My Homepage</h1>
+
+    <p>My <span>name</span> is Donald.</p>
+    <p>I live in <span>Duckburg</span>.</p>
+    <p>My best friend is Mickey.</p>
+    <h1>Welcome to My Homepage</h1>
+
+    <div style="border:1px solid black">
+        <p>This is a paragraph in a div.</p>
+        <p>This is a paragraph in a div.</p>
+    </div><br>
+
+    <div style="border:1px solid black">
+        <p>This is a paragraph in another div.</p>
+        <p>This is a paragraph in another div.</p>
+    </div>
+
+    <p>This is also a paragraph.</p>
+    <h1>Welcome to My Homepage</h1>
+
+    <p>My name is Donald.</p>
+    <p class="intro">I live in Duckburg.</p>
+    <p class="intro">I love Duckburg.</p>
+    <p>My best friend is Mickey.</p>
+    <h1>Welcome to My Homepage</h1>
+
+    <p>My name is Donald (index 0).</p>
+    <p>Donald Duck (index 1).</p>
+    <p>I live in Duckburg (index 2).</p>
+    <p>My best friend is Mickey (index 3).</p>
+    <button>Alert the value of each list item</button>
+
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Soda</li>
+    </ul>
+    <div><em>Hello world! What a beautiful day!</em></div>
+
+    <p>In this example, by clicking on the button, we search for all the text nodes inside the div element and wrap them
+        with a b element.</p>
+
+    <button>Find all text nodes in div and wrap them</button><br>
+    body (great-grandparent)
+    <div style="width:500px;">div (grandparent)
+        <ul>ul (direct parent)
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+        </ul>
+    </div>
+        <h1>Welcome</h1>
+        <p>A p element.</p>
+        <p>Another p element.</p>
+        
+        <span>A span element.</span>
+        <span>A span element.</span><br><br>
+        
+        <div>This example adds the same css style for both p and span elements, as the existing h1 element.</div>
+    -->
+</body>
+
+</html>

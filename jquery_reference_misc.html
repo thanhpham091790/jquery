@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+            $("#btn1").click(function(){
+                $("div").data("greeting","Hello World");
+            });
+            $("#btn2").click(function(){
+                alert($("div").data("greeting"));
+            });
+            $("button").click(function(){
+                $("li").each(function(){
+                    alert($(this).text());
+                });
+            });
+            $("button").click(function(){
+                var x = $("p").get(0);
+                $("div").text(x.nodeName+ ": "+x.innerHTML);
+            });
+            $("li").click(function(){
+                alert($(this).index());
+            });
+            */
+            $("button").click(function(){
+                var i;
+                var x = $("li").toArray();
+                for(i=0;i<x.length;i++){
+                    alert(x[i].innerHTML);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Alert the value of each list item</button>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Soda</li>
+    </ul>
+
+    <!--
+    <p>This is a paragraph</p>
+
+    <button>Get the p DOM element</button>
+
+    <div></div>
+    <button>Alert the value of each list item</button>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Soda</li>
+    </ul>
+    <button id="btn1">Attach data to div element</button><br>
+    <button id="btn2">Get data attached to div element</button>
+
+    <div></div>
+    -->
+</body>
+
+</html>

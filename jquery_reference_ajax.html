@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+            $("button").click(function(){
+                $.ajax({
+                    url:"demo_test.txt",
+                    success: function(result){
+                        $("#div1").html(result);
+                    }
+                });
+            });
+            $("button").click(function(){
+                $.ajaxSetup({
+                    url:"demo_test.txt",
+                    success: function(result){
+                        $("div").html(result);
+                    }
+                });
+                $.ajax();
+            });
+            $("button").click(function(){
+                $.get("demo_test.txt",function(data,status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+            });
+            $("button").click(function(){
+                $.getJSON("demo_ajax_json.json",function(result){
+                    $.each(result,function(i, field){
+                        $("div").append(field + " ");
+                    });
+                });
+            });
+            $("button").click(function(){
+                $.getScript("demo_ajax_script.js");
+            });
+            personalObj = new Object();
+            personalObj.firstname = "Thanh";
+            personalObj.lastname = "Pham";
+            personalObj.age = "30";
+            personalObj.eyecolor = "black";
+            $("button").click(function(){
+                $("div").text($.param(personalObj));
+            });
+            $("button").click(function(){
+            $.post(
+                "demo_test_post.php",
+                {
+                    name:"Pham Hong Thanh",
+                    city:"Englewood"
+                },
+                function(data,status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                }
+                );
+            });
+           $("button").click(function(){
+               $("#txt").load("demo_ajax_load.php");
+           });
+           $(document).ajaxStart(function(){
+               $("#wait").css("display","block");
+           });
+           $(document).ajaxComplete(function(){
+               $("#wait").css("display","none");
+           });
+            $(document).ajaxError(function () {
+                alert("An error occured!");
+            });
+            $("button").click(function () {
+                $("div").load("wrongfile.txt");
+            });
+            $(document).ajaxSend(function(e,xhr,opt){
+                $("#div1").append("<p>Requesting "+ opt.url +"</p>");
+            });
+            $("button").click(function(){
+                $("#div2").load("demo_ajax_load.php");
+            });
+            $(document).ajaxStart(function(){
+                $(this).html("<img src='https://www.w3schools.com/jquery/demo_wait.gif' width='64' height='64' />");
+            });
+            $("button").click(function(){
+                $("div").load("demo_ajax_load.php");
+            });
+            $(document).ajaxStop(function(){
+                alert("All AJAX requests completed.");
+            });
+            $(document).ajaxSuccess(function(){
+                alert("AJAX request successfully completed.");
+            });
+            $("button").click(function(){
+                $("div").load("demo_ajax_load.php");
+            });
+            */
+            $("button").click(function(){
+                var arr = $("form").serializeArray();
+                $.each(arr,function(i,field){
+                    $("div").append(i+" : "+field.name+" : "+field.value+"<br>");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="">
+        First name: <input type="text" name="FirstName" value="Mickey"><br>
+        Last name: <input type="text" name="LastName" value="Mouse"><br>
+    </form>
+
+    <button>Serialize form values</button>
+
+    <div></div>
+    <!--
+    <div>
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+    <div>
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+
+    <div id="div1"></div>
+    <div id="div2">
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+    <div>
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+    <div id="txt">
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+
+    <div id="wait"
+        style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;">
+        <img src='https://www.w3schools.com/jquery/demo_wait.gif' width="64" height="64" /><br>Loading..</div>
+    <button>Send an HTTP POST request to a page and get the result back</button>
+    <button>Serialize object</button>
+    <div></div>
+    <button>Use Ajax to get and then run a JavaScript</button>
+    <button>Get JSON data</button>
+    <div></div>
+    <button>Send an HTTP GET request to a page and get the result back</button>
+    <div>
+        <h2>Let AJAX change this text</h2>
+    </div>
+
+    <button>Change Content</button>
+        <div id="div1">
+            <h2>Let jQuery AJAX Change This Text</h2>
+        </div>
+        <button>Get External Content</button>
+    -->
+</body>
+
+</html>

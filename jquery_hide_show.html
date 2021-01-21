@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div.ex{
+            background-color: #e5eecc;
+            padding: 7px;
+            border: 1px solid #c3c3c3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery hide() -->
+    <p class="p1">If you click on me, I will disappear.</p>
+    <p class="p1">Click me away!</p>
+    <p class="p1">Click me too!</p>
+    <!-- jQuery hide() and show() -->
+    <p id="p2">If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <!-- jQuery toggle() -->
+
+    <p class="p3">This is a paragraph with little content.</p>
+    <p class="p3">This is another small paragraph.</p>
+    <button id="toggle">Toggle between hiding and showing the paragraphs</button>
+    <!-- jQuery hide() -->
+    <h3>Island Trading</h3>
+
+    <div class="ex">
+        <button class="hide">Hide me</button>
+        <p>Contact: Helen Bennett<br>
+            Garden House Crowther Way<br>
+            London</p>
+    </div>
+
+    <h3>Paris Specialities</h3>
+
+    <div class="ex">
+        <button class="hide">Hide me</button>
+        <p>Contact: Marie Bertrand<br>
+            265, Boulevard Charonne<br>
+            Paris</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".hide").click(function(){
+                $(this).parents(".ex").hide("slow");
+            });
+
+            $("#toggle").click(function () {
+                $(".p3").toggle();
+            });
+
+            $("#hide").click(function () {
+                $("#p2").hide();
+            });
+            $("#show").click(function () {
+                $("#p2").show();
+            });
+
+            $(".p1").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+
+</html>

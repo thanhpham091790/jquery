@@ -27,9 +27,20 @@
     <p>This is another paragraph.</p>
 
     <button id="btn3">Click me</button>
+    <!-- Hide the current HTML element -->
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button id="btn4">Click me</button>
     <script>
         $(document).ready(function () {
-            $("#btn3").click(function(){
+            $("#btn4").click(function(){
+                $(this).hide();
+            });
+
+            $("#btn3").click(function () {
                 $(".test").hide();
             });
 

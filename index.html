@@ -12,10 +12,21 @@
     <p>This is a paragraph.</p>
     <p>This is another paragraph.</p>
 
-    <button>Click me to hide paragraphs</button>
+    <button id="btn1">Click me to hide paragraphs</button>
+    <!-- Hide the element with id="test" -->
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p id="test">This is another paragraph.</p>
+
+    <button id="btn2">Click me</button>
     <script>
         $(document).ready(function () {
-            $("button").click(function(){
+            $("#btn2").click(function(){
+                $("#test").hide();
+            });
+
+            $("#btn1").click(function () {
                 $("p").hide();
             });
         });

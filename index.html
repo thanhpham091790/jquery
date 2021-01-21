@@ -20,9 +20,20 @@
     <p id="test">This is another paragraph.</p>
 
     <button id="btn2">Click me</button>
+    <!-- Hide all elements with class='test' -->
+    <h2 class="test">This is a heading</h2>
+
+    <p class="test">This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button id="btn3">Click me</button>
     <script>
         $(document).ready(function () {
-            $("#btn2").click(function(){
+            $("#btn3").click(function(){
+                $(".test").hide();
+            });
+
+            $("#btn2").click(function () {
                 $("#test").hide();
             });
 

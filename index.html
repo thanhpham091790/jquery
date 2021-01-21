@@ -22,8 +22,24 @@
     <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
     <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
     <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+    <!-- jQuery fadeToggle() -->
+    <p>Demonstrate fadeToggle() with different speed parameters.</p>
+
+    <button id="btn3">Click to fade in/out boxes</button><br><br>
+
+    <div id="div7" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div8" style="width:80px;height:80px;background-color:green;"></div>
+    <br>
+    <div id="div9" style="width:80px;height:80px;background-color:blue;"></div>
     <script>
         $(document).ready(function () {
+            $("#btn3").click(function () {
+                $("#div7").fadeToggle();
+                $("#div8").fadeToggle("slow");
+                $("#div9").fadeToggle(3000);
+            });
+
             $("#btn2").click(function () {
                 $("#div4").fadeOut();
                 $("#div5").fadeOut("slow");

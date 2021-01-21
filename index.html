@@ -3,64 +3,64 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div.ex{
+            background-color: #e5eecc;
+            padding: 7px;
+            border: 1px solid #c3c3c3;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- jQuery click() -->
+    <!-- jQuery hide() -->
     <p class="p1">If you click on me, I will disappear.</p>
     <p class="p1">Click me away!</p>
     <p class="p1">Click me too!</p>
-    <!-- jQuery dbclick() -->
-    <p class="p2">If you double-click on me, I will disappear.</p>
-    <p class="p2">Click me away!</p>
-    <p class="p2">Click me too!</p>
-    <!-- jQuery mouseenter() -->
-    <p id="p3">Enter this paragraph.</p>
-    <!-- jQuery mouseleave() -->
-    <p id="p4">This is a paragraph.</p>
-    <!-- jQuery mousedown() -->
-    <p id="p5">This is a paragraph.</p>
-    <!-- jQuery mouseup() -->
-    <p id="p6">This is a paragraph.</p>
-    <!-- jQuery hover() -->
-    <p id="p7">This is a paragraph.</p>
-    <!-- jQuery focus() and blur() -->
-    Name: <input type="text" name="fullname"><br>
-    Email: <input type="text" name="email">
+    <!-- jQuery hide() and show() -->
+    <p id="p2">If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <!-- jQuery toggle() -->
+
+    <p class="p3">This is a paragraph with little content.</p>
+    <p class="p3">This is another small paragraph.</p>
+    <button id="toggle">Toggle between hiding and showing the paragraphs</button>
+    <!-- jQuery hide() -->
+    <h3>Island Trading</h3>
+
+    <div class="ex">
+        <button class="hide">Hide me</button>
+        <p>Contact: Helen Bennett<br>
+            Garden House Crowther Way<br>
+            London</p>
+    </div>
+
+    <h3>Paris Specialities</h3>
+
+    <div class="ex">
+        <button class="hide">Hide me</button>
+        <p>Contact: Marie Bertrand<br>
+            265, Boulevard Charonne<br>
+            Paris</p>
+    </div>
+
     <script>
         $(document).ready(function () {
-            $("input").focus(function(){
-                $(this).css("background-color","yellow");
-            });
-            $("input").blur(function(){
-                $(this).css("background-color","green");
+            $(".hide").click(function(){
+                $(this).parents(".ex").hide("slow");
             });
 
-            $("#p7").hover(function () {
-                alert("You entered p7!");
-            },
-                function () {
-                    alert("Bye! You now leave p7!");
-                });
-
-            $("#p6").mouseup(function () {
-                alert("Mouse up over p6!");
+            $("#toggle").click(function () {
+                $(".p3").toggle();
             });
 
-            $("#p5").mousedown(function () {
-                alert("Mouse down over p1!");
+            $("#hide").click(function () {
+                $("#p2").hide();
             });
-
-            $("#p4").mouseleave(function () {
-                alert("Bye! You now leave p4!");
-            });
-
-            $("#p3").mouseenter(function () {
-                alert("You entered p3!");
-            });
-
-            $(".p2").dblclick(function () {
-                $(this).hide();
+            $("#show").click(function () {
+                $("#p2").show();
             });
 
             $(".p1").click(function () {

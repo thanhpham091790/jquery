@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- jQuery animate() -->
+    <button id="btn1">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div1" style="background:#98bf21;height:100px;width:100px;position: relative;"></div>
+    <!-- jQuery animate() - manipulate multiple CSS properties -->
+    <button id="btn2">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div2" style="background:#98bf21;height:100px;width:100px;position: relative;"></div>
+    <!-- jQuery animate() - using relative values -->
+    <button id="btn3">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div3" style="background:#98bf21;height:100px;width:100px;position: relative;"></div>
+    <!-- jQuery animate() - using pre-defined values -->
+    <p>Click the button multiple times to toggle the animation.</p>
+
+    <button id="btn4">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div4" style="background:#98bf21;height:100px;width:100px;position: relative;"></div>
+    <!-- jQuery animate() - several calls after each other -->
+    <button id="btn5">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div5" style="background:#98bf21;height:100px;width:100px;position: relative;"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn5").click(function(){
+                $("#div5").animate({
+                    height: "300px",
+                    opacity: "0.4"
+                },"slow").animate({
+                    width: '300px', 
+                    opacity: '0.8'
+                },"slow").animate({
+                    height: '100px', 
+                    opacity: '0.4'
+                }, "slow").animate({
+                    width: '100px', 
+                    opacity: '0.8'
+                }, "slow");
+            });
+
+            $("#btn4").click(function () {
+                $("#div4").animate({
+                    height: "toggle"
+                });
+            });
+
+            $("#btn3").click(function () {
+                $("#div3").animate({
+                    left: "+=250px",
+                    height: "+=150px",
+                    width: "+=150px"
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#div2").animate({
+                    left: "250px",
+                    opacity: "0.5",
+                    height: "150px",
+                    width: "150px"
+                });
+            });
+
+            $("#btn1").click(function () {
+                $("#div1").animate({
+                    left: "250px"
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

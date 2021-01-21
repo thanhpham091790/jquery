@@ -7,12 +7,20 @@
 
 <body>
     <!-- jQuery click() -->
-    <p>If you click on me, I will disappear.</p>
-    <p>Click me away!</p>
-    <p>Click me too!</p>
+    <p class="p1">If you click on me, I will disappear.</p>
+    <p class="p1">Click me away!</p>
+    <p class="p1">Click me too!</p>
+    <!-- jQuery dbclick() -->
+    <p class="p2">If you double-click on me, I will disappear.</p>
+    <p class="p2">Click me away!</p>
+    <p class="p2">Click me too!</p>
     <script>
         $(document).ready(function () {
-            $("p").click(function(){
+            $(".p2").dblclick(function(){
+                $(this).hide();
+            });
+
+            $(".p1").click(function () {
                 $(this).hide();
             });
         });

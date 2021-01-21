@@ -18,17 +18,48 @@
     <p id="p3">Enter this paragraph.</p>
     <!-- jQuery mouseleave() -->
     <p id="p4">This is a paragraph.</p>
+    <!-- jQuery mousedown() -->
+    <p id="p5">This is a paragraph.</p>
+    <!-- jQuery mouseup() -->
+    <p id="p6">This is a paragraph.</p>
+    <!-- jQuery hover() -->
+    <p id="p7">This is a paragraph.</p>
+    <!-- jQuery focus() and blur() -->
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
     <script>
         $(document).ready(function () {
-            $("#p4").mouseleave(function(){
+            $("input").focus(function(){
+                $(this).css("background-color","yellow");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color","green");
+            });
+
+            $("#p7").hover(function () {
+                alert("You entered p7!");
+            },
+                function () {
+                    alert("Bye! You now leave p7!");
+                });
+
+            $("#p6").mouseup(function () {
+                alert("Mouse up over p6!");
+            });
+
+            $("#p5").mousedown(function () {
+                alert("Mouse down over p1!");
+            });
+
+            $("#p4").mouseleave(function () {
                 alert("Bye! You now leave p4!");
             });
 
-            $("#p3").mouseenter(function(){
+            $("#p3").mouseenter(function () {
                 alert("You entered p3!");
             });
 
-            $(".p2").dblclick(function(){
+            $(".p2").dblclick(function () {
                 $(this).hide();
             });
 

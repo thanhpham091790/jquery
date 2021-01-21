@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <p class="p1">If you click on me, I will disappear.</p>
-        <p class="p2">If you double click on me, I will disappear.</p>
-        <p class="p3">If your mouse enter or leave on me, An alert appear.</p>
-        <p class="p4">If your mouse down or up on me, An alert appear.</p>
-        <p class="p5">If your mouse up on me, An alert appear.</p>
-        <p class="p6">If your mouse hover on me, An alert appear.</p>
-        Name: <input type="text" name="name" />
-        <script>
-            $(document).ready(function(){
-                $(".p1").on("click",function(){
-                    $(this).hide();
-                });
-                $(".p2").on("dblclick",function(){
-                    $(this).hide();
-                });
-                $(".p3").on("mouseenter",function(){
-                    alert("Welcome! You entered p3.");
-                });
-                $(".p3").on("mouseleave",function(){
-                    alert("Bye! You leaved p3.");
-                });
-                $(".p4").on("mousedown",function(){
-                    alert("Mouse down over p4!");
-                });
-                $(".p5").on("mouseup",function(){
-                    alert("Mouse up over p5!");
-                });
-                $(".p6").hover(function(){
-                    alert("Mouse hover p6!");
-                });
-                $("input").on("focus",function(){
-                    $(this).css("background-color","yellow");
-                });
-                $("input").on("blur",function(){
-                    $(this).css("background-color","green");
-                });
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Hide all <p> elements -->
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Click me to hide paragraphs</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function(){
+                $("p").hide();
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>

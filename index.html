@@ -14,8 +14,14 @@
     <p class="p2">If you double-click on me, I will disappear.</p>
     <p class="p2">Click me away!</p>
     <p class="p2">Click me too!</p>
+    <!-- jQuery mouseenter() -->
+    <p id="p3">Enter this paragraph.</p>
     <script>
         $(document).ready(function () {
+            $("#p3").mouseenter(function(){
+                alert("You entered p3!");
+            });
+
             $(".p2").dblclick(function(){
                 $(this).hide();
             });

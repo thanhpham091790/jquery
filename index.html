@@ -24,16 +24,26 @@
 
     <button id="btn4">Show Old/New Text</button>
     <button id="btn5">Show Old/New HTML</button>
+    <!-- jQuery attr() - set attribute value -->
+    <p><a href="https://www.w3schools.com" id="test6">W3Schools.com</a></p>
+
+    <button id="btn6">Change href Value</button>
+
+    <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
     <script>
         $(document).ready(function () {
+            $("#btn6").click(function(){
+                $("#test6").attr("href","https://www.google.com");
+            });
+
             $("#btn4").click(function () {
-                $("#test4").text(function(i, origText){
-                    return "Old text: " + origText + " New text: Hello world! (index: "+ i +")";
+                $("#test4").text(function (i, origText) {
+                    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
                 });
             });
             $("#btn5").click(function () {
-                $("#test5").html(function(i, origText){
-                    return "Old text: " + origText + " New html: Hello <b>world</b>! (index: "+ i +")";
+                $("#test5").html(function (i, origText) {
+                    return "Old text: " + origText + " New html: Hello <b>world</b>! (index: " + i + ")";
                 });
             });
 

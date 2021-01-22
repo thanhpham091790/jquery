@@ -9,34 +9,42 @@
 </style>
 
 <body>
-    <!-- jQuery text() and html() - get content -->
-    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+    <!-- jQuery text(), html(), and val() - set content -->
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
 
-    <button id="btn1">Show Text</button>
-    <button id="btn2">Show HTML</button>
-    <!-- jQuery val() - get content -->
-    <p>Name: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
 
-    <button id="btn3">Show Value</button>
-    <!-- jQuery attr() - get attribute value -->
-    <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+    <!-- jQuery text() and html() - Set content with a callback function -->
+    <p id="test4">This is a <b>bold</b> paragraph.</p>
+    <p id="test5">This is another <b>bold</b> paragraph.</p>
 
-    <button id="btn4">Show href Value</button>
+    <button id="btn4">Show Old/New Text</button>
+    <button id="btn5">Show Old/New HTML</button>
     <script>
         $(document).ready(function () {
-            $("#btn4").click(function(){
-                alert("Href attribute: " + $("#w3s").attr("href"));
+            $("#btn4").click(function () {
+                $("#test4").text(function(i, origText){
+                    return "Old text: " + origText + " New text: Hello world! (index: "+ i +")";
+                });
             });
-
-            $("#btn3").click(function () {
-                alert("Value: " + $("#test3").val());
+            $("#btn5").click(function () {
+                $("#test5").html(function(i, origText){
+                    return "Old text: " + origText + " New html: Hello <b>world</b>! (index: "+ i +")";
+                });
             });
 
             $("#btn1").click(function () {
-                alert("Text: " + $("#test").text());
+                $("#test1").text("Hello world!")
             });
             $("#btn2").click(function () {
-                alert("HTML: " + $("#test").html());
+                $("#test2").html("Hello <b>world</b>!")
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Tom and Jerry!")
             });
         });
     </script>

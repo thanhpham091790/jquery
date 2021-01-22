@@ -14,8 +14,16 @@
 
     <button id="btn1">Show Text</button>
     <button id="btn2">Show HTML</button>
+    <!-- jQuery val() - get content -->
+    <p>Name: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+    <button id="btn3">Show Value</button>
     <script>
         $(document).ready(function () {
+            $("#btn3").click(function(){
+                alert("Value: " + $("#test3").val());
+            });
+
             $("#btn1").click(function(){
                 alert("Text: "+ $("#test").text());
             });

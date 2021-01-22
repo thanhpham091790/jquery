@@ -5,68 +5,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
-    #panel,
-    #flip {
-        padding: 5px;
-        font-size: 18px;
-        text-align: center;
-        background-color: #555;
-        color: white;
-        border: solid 1px #666;
-        border-radius: 3px;
-    }
 
-    #panel {
-        padding: 50px;
-        display: none;
-    }
 </style>
 
 <body>
-    <!-- jQuery stop() sliding -->
-    <button id="stop">Stop sliding</button>
+    <!-- jQuery text() and html() - get content -->
+    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
 
-    <div id="flip">Click to slide down panel</div>
-    <div id="panel">Hello world!</div>
-    <!-- jQuery stop() animation (with parameters) -->
-    <button id="start">Start</button>
-    <button id="stop1">Stop</button>
-    <button id="stop2">Stop all</button>
-    <button id="stop3">Stop but finish</button>
-
-    <p>The "Start" button starts the animation.</p>
-    <p>The "Stop" button stops the current active animation, but allows the queued animations to be performed
-        afterwards.</p>
-    <p>The "Stop all" button stops the current active animation and clears the
-        animation queue; so all animations on the element is stopped.</p>
-    <p>The "Stop but finish" rushes through the current active animation, then it stops.</p>
-
-    <div id="div2" style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
     <script>
         $(document).ready(function () {
-            $("#start").click(function(){
-                $("#div2").animate({
-                    left:"100px"
-                },5000);
-                $("#div2").animate({
-                    fontSize: "3rem"
-                },5000);
+            $("#btn1").click(function(){
+                alert("Text: "+ $("#test").text());
             });
-            $("#stop1").click(function(){
-                $("#div2").stop();
-            });
-            $("#stop2").click(function(){
-                $("#div2").stop(true);
-            });
-            $("#stop3").click(function(){
-                $("#div2").stop(true, true);
-            });
-
-            $("#flip").click(function () {
-                $("#panel").slideDown(5000);
-            });
-            $("#stop").click(function () {
-                $("#panel").stop();
+            $("#btn2").click(function(){
+                alert("HTML: "+ $("#test").html());
             });
         });
     </script>

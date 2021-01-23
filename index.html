@@ -16,9 +16,20 @@
         <p>This is another paragraph in the div.</p>
     </div>
     <button id="btn1">Remove div element</button>
+    <!-- jQuery remove() - with a parameter -->
+    <p>This is a paragraph.</p>
+    <p class="test2">This is another paragraph.</p>
+    <p class="test2">This is another paragraph.</p>
+
+    <button id="btn2">Remove all p elements with class="test"</button>
+
     <script>
         $(document).ready(function () {
-            $("#btn1").click(function(){
+            $("#btn2").click(function(){
+                $("p").remove(".test2");
+            });
+
+            $("#btn1").click(function () {
                 $("#div1").remove();
             });
         });

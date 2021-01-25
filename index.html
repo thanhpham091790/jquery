@@ -51,8 +51,20 @@
 
     <p>outerWidth(true) - returns the width of an element (includes padding, border, and margin).</p>
     <p>outerHeight(true) - returns the height of an element (includes padding, border, and margin).</p>
+    <!-- jQuery - return width() and height() of document and window -->
+    <button id="btn5">Display dimensions of document and window</button>
+    
     <script>
         $(document).ready(function () {
+            $("#btn5").click(function(){
+                var txt = "";
+                txt += "Document width/height: " + $(document).width();
+                txt += "x" + $(document).height() + "\n";
+                txt += "Window width/height: " + $(window).width();
+                txt += "x" + $(window).height();
+                alert(txt);
+            });
+
             $("#btn4").click(function () {
                 var txt = "";
                 txt += "OuterWidth of div: " + $("#div4").outerWidth(true) + "<br>";

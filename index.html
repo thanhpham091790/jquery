@@ -8,7 +8,8 @@
     #div1,
     #div2,
     #div3,
-    #div4 {
+    #div4,
+    #div6 {
         height: 100px;
         width: 300px;
         padding: 10px;
@@ -53,10 +54,19 @@
     <p>outerHeight(true) - returns the height of an element (includes padding, border, and margin).</p>
     <!-- jQuery - return width() and height() of document and window -->
     <button id="btn5">Display dimensions of document and window</button>
-    
+    <!-- jQuery - set width() and height() -->
+    <div id="div6"></div>
+    <br>
+
+    <button id="btn6">Resize div</button>
+
     <script>
         $(document).ready(function () {
-            $("#btn5").click(function(){
+            $("#btn6").click(function(){
+                $("#div6").width(500).height(500);
+            });
+
+            $("#btn5").click(function () {
                 var txt = "";
                 txt += "Document width/height: " + $(document).width();
                 txt += "x" + $(document).height() + "\n";

@@ -5,102 +5,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
-    #div1,
-    #div2,
-    #div3,
-    #div4,
-    #div6 {
-        height: 100px;
-        width: 300px;
-        padding: 10px;
-        margin: 3px;
-        border: 1px solid blue;
-        background-color: lightblue;
+    .ancestors * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
     }
 </style>
 
 <body>
-    <!-- jQuery - return width() and height() -->
-    <div id="div1"></div>
-    <br>
+    <!-- jQuery parent() -->
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
 
-    <button id="btn1">Display dimensions of div</button>
-
-    <p>width() - returns the width of an element.</p>
-    <p>height() - returns the height of an element.</p>
-    <!-- jQuery - return innerWidth() and innerHeight() -->
-    <div id="div2"></div>
-    <br>
-
-    <button id="btn2">Display dimensions of div</button>
-
-    <p>innerWidth() - returns the width of an element (includes padding).</p>
-    <p>innerHeight() - returns the height of an element (includes padding).</p>
-    <!-- jQuery - return outerWidth() and outerHeight() -->
-    <div id="div3"></div>
-    <br>
-
-    <button id="btn3">Display dimensions of div</button>
-
-    <p>outerWidth() - returns the width of an element (includes padding and border).</p>
-    <p>outerHeight() - returns the height of an element (includes padding and border).</p>
-    <!-- jQuery - return outerWidth(true) and outerHeight(true) -->
-    <div id="div4"></div>
-    <br>
-
-    <button id="btn4">Display dimensions of div</button>
-
-    <p>outerWidth(true) - returns the width of an element (includes padding, border, and margin).</p>
-    <p>outerHeight(true) - returns the height of an element (includes padding, border, and margin).</p>
-    <!-- jQuery - return width() and height() of document and window -->
-    <button id="btn5">Display dimensions of document and window</button>
-    <!-- jQuery - set width() and height() -->
-    <div id="div6"></div>
-    <br>
-
-    <button id="btn6">Resize div</button>
-
+        <div style="width:500px;">div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
-            $("#btn6").click(function(){
-                $("#div6").width(500).height(500);
-            });
-
-            $("#btn5").click(function () {
-                var txt = "";
-                txt += "Document width/height: " + $(document).width();
-                txt += "x" + $(document).height() + "\n";
-                txt += "Window width/height: " + $(window).width();
-                txt += "x" + $(window).height();
-                alert(txt);
-            });
-
-            $("#btn4").click(function () {
-                var txt = "";
-                txt += "OuterWidth of div: " + $("#div4").outerWidth(true) + "<br>";
-                txt += "OuterHeight of div: " + $("#div4").outerHeight(true);
-                $("#div4").html(txt);
-            });
-
-            $("#btn3").click(function () {
-                var txt = "";
-                txt += "OuterWidth of div: " + $("#div3").outerWidth() + "<br>";
-                txt += "OuterHeight of div: " + $("#div3").outerHeight();
-                $("#div3").html(txt);
-            });
-
-            $("#btn2").click(function () {
-                var txt = "";
-                txt += "InnerWidth of div: " + $("#div2").innerWidth() + "<br>";
-                txt += "InnerHeight of div: " + $("#div2").innerHeight();
-                $("#div2").html(txt);
-            });
-
-            $("#btn1").click(function () {
-                var txt = "";
-                txt += "Width of div: " + $("#div1").width() + "<br>";
-                txt += "Height of div: " + $("#div1").height();
-                $("#div1").html(txt);
+            $("span").parent().css({
+                "color":"red",
+                "border":"2px solid red"
             });
         });
     </script>

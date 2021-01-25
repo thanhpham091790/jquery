@@ -5,7 +5,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
-    #div1, #div2 {
+    #div1,
+    #div2,
+    #div3 {
         height: 100px;
         width: 300px;
         padding: 10px;
@@ -32,9 +34,25 @@
 
     <p>innerWidth() - returns the width of an element (includes padding).</p>
     <p>innerHeight() - returns the height of an element (includes padding).</p>
+    <!-- jQuery - return outerWidth() and outerHeight() -->
+    <div id="div3"></div>
+    <br>
+
+    <button id="btn3">Display dimensions of div</button>
+
+    <p>outerWidth() - returns the width of an element (includes padding and border).</p>
+    <p>outerHeight() - returns the height of an element (includes padding and border).</p>
+
     <script>
         $(document).ready(function () {
-            $("#btn2").click(function(){
+            $("#btn3").click(function(){
+                var txt = "";
+                txt += "OuterWidth of div: " + $("#div3").outerWidth() + "<br>";
+                txt += "OuterHeight of div: " + $("#div3").outerHeight();
+                $("#div3").html(txt);
+            });
+
+            $("#btn2").click(function () {
                 var txt = "";
                 txt += "InnerWidth of div: " + $("#div2").innerWidth() + "<br>";
                 txt += "InnerHeight of div: " + $("#div2").innerHeight();

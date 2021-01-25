@@ -7,7 +7,8 @@
 <style>
     #div1,
     #div2,
-    #div3 {
+    #div3,
+    #div4 {
         height: 100px;
         width: 300px;
         padding: 10px;
@@ -42,10 +43,24 @@
 
     <p>outerWidth() - returns the width of an element (includes padding and border).</p>
     <p>outerHeight() - returns the height of an element (includes padding and border).</p>
+    <!-- jQuery - return outerWidth(true) and outerHeight(true) -->
+    <div id="div4"></div>
+    <br>
 
+    <button id="btn4">Display dimensions of div</button>
+
+    <p>outerWidth(true) - returns the width of an element (includes padding, border, and margin).</p>
+    <p>outerHeight(true) - returns the height of an element (includes padding, border, and margin).</p>
     <script>
         $(document).ready(function () {
-            $("#btn3").click(function(){
+            $("#btn4").click(function () {
+                var txt = "";
+                txt += "OuterWidth of div: " + $("#div4").outerWidth(true) + "<br>";
+                txt += "OuterHeight of div: " + $("#div4").outerHeight(true);
+                $("#div4").html(txt);
+            });
+
+            $("#btn3").click(function () {
                 var txt = "";
                 txt += "OuterWidth of div: " + $("#div3").outerWidth() + "<br>";
                 txt += "OuterHeight of div: " + $("#div3").outerHeight();

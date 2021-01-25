@@ -30,8 +30,14 @@
         <p>A paragraph in another div.</p>
         <p>Another paragraph in another div.</p>
     </div>
+    <!-- jQuery last() -->
+
     <script>
         $(document).ready(function () {
+            $("div").last().css({
+                "background-color":"yellow"
+            });
+
             $("div").first().css({
                 "background-color":"yellow"
             });

@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
-    #div1 {
+    #div1, #div2 {
         height: 100px;
         width: 300px;
         padding: 10px;
@@ -24,10 +24,24 @@
 
     <p>width() - returns the width of an element.</p>
     <p>height() - returns the height of an element.</p>
+    <!-- jQuery - return innerWidth() and innerHeight() -->
+    <div id="div2"></div>
+    <br>
 
+    <button id="btn2">Display dimensions of div</button>
+
+    <p>innerWidth() - returns the width of an element (includes padding).</p>
+    <p>innerHeight() - returns the height of an element (includes padding).</p>
     <script>
         $(document).ready(function () {
-            $("#btn1").click(function(){
+            $("#btn2").click(function(){
+                var txt = "";
+                txt += "InnerWidth of div: " + $("#div2").innerWidth() + "<br>";
+                txt += "InnerHeight of div: " + $("#div2").innerHeight();
+                $("#div2").html(txt);
+            });
+
+            $("#btn1").click(function () {
                 var txt = "";
                 txt += "Width of div: " + $("#div1").width() + "<br>";
                 txt += "Height of div: " + $("#div1").height();

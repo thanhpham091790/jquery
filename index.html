@@ -63,12 +63,49 @@
     </table>
 
     <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+    <!-- Filter list -->
+    <h2>Filterable List</h2>
+    <p>Type something in the input field to search the list for specific items:</p>
+    <input id="myInput1" type="text" placeholder="Search..">
+    <br>
 
+    <ul id="myList">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth</li>
+    </ul>
+    <!-- Filter anything -->
+    <h2>Filter Anything</h2>
+    <p>Type something in the input field to search for a specific text inside the div element with id="myDIV":</p>
+    <input id="myInput2" type="text" placeholder="Search..">
+
+    <div id="myDIV">
+        <p>I am a paragraph.</p>
+        <div>I am a div element inside div.</div>
+        <button>I am a button</button>
+        <button>Another button</button>
+        <p>Another paragraph.</p>
+    </div>
     <script>
         $(document).ready(function () {
-            $("#myInput").on("keyup",function(){
+            $("#myInput2").on("keyup",function(){
                 var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function(){
+                $("#myDIV").children().filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+
+            $("#myInput1").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myList li").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                 });
             });

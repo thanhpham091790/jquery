@@ -31,18 +31,31 @@
           </li>
         </ul>   
       </div>
+    <!-- jQuery parentsUntil() -->
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+          <li>li (direct parent)
+            <span id="span3">span</span>
+          </li>
+        </ul>   
+      </div>
     <script>
         $(document).ready(function () {
+            $("#span3").parentsUntil("div").css({
+                "color":"red",
+                "border":"2px solid red"
+            });
             
+            $("#span2").parents().css({
+                "color":"red",
+                "border": "2px solid red"
+            });
+
             $("#span1").parent().css({
                 "color":"red",
                 "border":"2px solid red"
             });
 
-            $("#span2").parents().css({
-                "color":"red",
-                "border": "2px solid red"
-            });
         });
     </script>
 </body>

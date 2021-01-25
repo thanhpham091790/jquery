@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    .siblings * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+
+<body class="siblings">
+    <!-- jQuery siblings() -->
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <p>p</p>
+    </div>
+    <!-- jQuery next() -->
+    <!-- jQuery nextAll() -->
+    <!-- jQuery nextUntil() -->
+    <script>
+        $(document).ready(function () {
+            $("h2").siblings().css({
+                "color":"red",
+                "border": "2px solid red"
+            });
+
+            $("h2").next().css({
+                "color":"blue",
+                "border": "2px solid blue"
+            });
+
+            $("h2").nextAll().css({
+                "color":"green",
+                "border": "2px solid green"
+            });
+
+            $("h2").nextUntil("h6").css({
+                "color":"yellow",
+                "border": "2px solid yellow"
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

@@ -5,61 +5,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
 </style>
 
 <body>
-    <!-- jQuery first() -->
-    <h1>Welcome to My Homepage</h1>
+    <!-- Filter table -->
+    <h2>Filterable Table</h2>
+    <p>Type something in the input field to search the table for first names, last names or emails:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
 
-    <p>This is a paragraph.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@mail.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@greatstuff.com</td>
+            </tr>
+            <tr>
+                <td>Anja</td>
+                <td>Ravendale</td>
+                <td>a_r@test.com</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <div style="border: 1px solid black;">
-        <p>A paragraph in a div.</p>
-        <p>Another paragraph in a div.</p>
-    </div>
-    <br>
+    <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
 
-    <div style="border: 1px solid black;">
-        <p>A paragraph in another div.</p>
-        <p>Another paragraph in another div.</p>
-    </div>
-    <br>
-
-    <div style="border: 1px solid black;">
-        <p>A paragraph in another div.</p>
-        <p>Another paragraph in another div.</p>
-    </div>
-    <!-- jQuery last() -->
-    <!-- jQuery eq() -->
-    <!-- jQuery filter() -->
-    <h1>Welcome to My Homepage</h1>
-
-    <p>My name is Donald.</p>
-    <p class="intro">I live in Duckburg.</p>
-    <p class="intro">I love Duckburg.</p>
-    <p>My best friend is Mickey.</p>
-    <!-- jQuery not() -->
     <script>
         $(document).ready(function () {
-            $("p").not(".intro").css({
-                "background-color":"green"
-            });
-
-            $("p").filter(".intro").css({
-                "background-color":"yellow"
-            });
-
-            $("p").eq(1).css({
-                "background-color": "red"
-            });
-
-            $("div").last().css({
-                "background-color": "yellow"
-            });
-
-            $("div").first().css({
-                "background-color": "yellow"
+            $("#myInput").on("keyup",function(){
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
             });
         });
     </script>

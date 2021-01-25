@@ -21,10 +21,14 @@
         <span>span</span>
         <h2>h2</h2>
         <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
         <p>p</p>
     </div>
     <!-- jQuery next() -->
     <!-- jQuery nextAll() -->
+    <!-- jQuery nextUntil() -->
     <script>
         $(document).ready(function () {
             $("h2").siblings().css({
@@ -40,6 +44,11 @@
             $("h2").nextAll().css({
                 "color":"green",
                 "border": "2px solid green"
+            });
+
+            $("h2").nextUntil("h6").css({
+                "color":"yellow",
+                "border": "2px solid yellow"
             });
             
         });

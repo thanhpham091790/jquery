@@ -39,8 +39,13 @@
     <p class="intro">I live in Duckburg.</p>
     <p class="intro">I love Duckburg.</p>
     <p>My best friend is Mickey.</p>
+    <!-- jQuery not() -->
     <script>
         $(document).ready(function () {
+            $("p").not(".intro").css({
+                "background-color":"green"
+            });
+
             $("p").filter(".intro").css({
                 "background-color":"yellow"
             });

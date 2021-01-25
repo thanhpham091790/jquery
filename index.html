@@ -21,6 +21,17 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
+
+    div.hidden {
+        display: none;
+    }
+
+    #myCheckbox {
+        max-height: 100px;
+        overflow-y: scroll;
+        border: 1px solid gray;
+        width: fit-content;
+    }
 </style>
 
 <body>
@@ -87,11 +98,55 @@
         <button>Another button</button>
         <p>Another paragraph.</p>
     </div>
+    <!-- Filter checkbox -->
+    <h2>Filter Checkbox</h2>
+    <div id="myCheckbox">
+        <input type="text" id="myInput3" placeholder="Search"><br>
+
+        <div>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Bike</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2">Car</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3">Boat</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle4" name="vehicle4" value="Moto">
+            <label for="vehicle4">Moto</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle5" name="vehicle5" value="Plane">
+            <label for="vehicle5">Plane</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle6" name="vehicle6" value="Bare Foot">
+            <label for="vehicle6">Bare Foot</label>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
-            $("#myInput2").on("keyup",function(){
+            $("#myInput3").on("keyup", function () {
+                // Input search 
                 var value = $(this).val().toLowerCase();
-                $("#myDIV").children().filter(function(){
+                // Filter checkbox
+                $("input[type='checkbox']").filter(function () {
+                    if ($(this).val().toLowerCase().indexOf(value) > -1) {
+                        $(this).parent().removeClass("hidden");
+                    } else {
+                        $(this).parent().addClass("hidden");
+                    }
+
+                });
+            });
+
+            $("#myInput2").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myDIV").children().filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                 });
             });

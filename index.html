@@ -14,28 +14,34 @@
     }
 </style>
 
-<body>
+<body class="ancestors">body (great-great-grandparent)
     <!-- jQuery parent() -->
     <div class="ancestors">
-        <div style="width:500px;">div (great-grandparent)
-            <ul>ul (grandparent)
-                <li>li (direct parent)
-                    <span>span</span>
-                </li>
-            </ul>
-        </div>
-
         <div style="width:500px;">div (grandparent)
             <p>p (direct parent)
-                <span>span</span>
+                <span id="span1">span</span>
             </p>
         </div>
     </div>
+    <!-- jQuery parents() -->
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+          <li>li (direct parent)
+            <span id="span2">span</span>
+          </li>
+        </ul>   
+      </div>
     <script>
         $(document).ready(function () {
-            $("span").parent().css({
+            
+            $("#span1").parent().css({
                 "color":"red",
                 "border":"2px solid red"
+            });
+
+            $("#span2").parents().css({
+                "color":"red",
+                "border": "2px solid red"
             });
         });
     </script>

@@ -23,12 +23,25 @@
         <h3>h3</h3>
         <p>p</p>
     </div>
+    <!-- jQuery next() -->
+    <!-- jQuery nextAll() -->
     <script>
         $(document).ready(function () {
             $("h2").siblings().css({
                 "color":"red",
                 "border": "2px solid red"
             });
+
+            $("h2").next().css({
+                "color":"blue",
+                "border": "2px solid blue"
+            });
+
+            $("h2").nextAll().css({
+                "color":"green",
+                "border": "2px solid green"
+            });
+            
         });
     </script>
 </body>
